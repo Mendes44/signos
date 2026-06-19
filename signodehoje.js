@@ -14,7 +14,17 @@ let colecao_signos = [
 ];
 
 const retorna_signo = (signos) => {
-    return signos[0]["Nome"]; //Aqui posso usar signos[0].nome que irá funcionar do mesmo jeito.
+
+    let data = new Date("2020-02-07 00:00:00");
+    let ano = data.getFullYear();
+
+    let data_inicio_signo = new Date(ano + "-" + signos[0]["DataInicio"] + "00:00:00");
+    let data_fim_signo = new Date(ano + "-" + signos[0]["DataFim"] + "23:59:59");
+
+    if (data >= data_inicio_signo && data <= data_fim_signo){
+        return signos[0]["Nome"]; //Aqui posso usar signos[0].nome que irá funcionar do mesmo jeito.
+    }
+
 }
 
 const nome_signo = retorna_signo(colecao_signos);
