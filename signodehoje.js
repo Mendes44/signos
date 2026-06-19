@@ -40,7 +40,7 @@ const retorna_signo = (signos, data) => {
 };
 
 
-let data_app = new Date("2026-12-30 00:00:00");//ano-mes-dia
+let data_app = new Date();//ano-mes-dia
 const nome_signo = retorna_signo(signos, data_app);
 
 console.log("O signo de hoje é: " + nome_signo);
